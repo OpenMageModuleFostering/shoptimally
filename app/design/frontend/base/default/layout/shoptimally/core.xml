@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+    	<!-- inject the shoptimally header into head (this includes the js etc) -->
+        <reference name="head">
+                <block type="shoptimally_core/injectjs" name="shoptimally_js" as="shoptimally_js" template="shoptimally/injectjs.phtml" />
+        </reference>
+        
+        <!-- inject basic page data into head (category name, page index, etc) -->
+		<reference name="head">
+                <block type="shoptimally_core/injectjs" after="-" name="shoptimally_js_extra" as="shoptimally_js_extra" template="shoptimally/injectjs_extras.phtml" />
+        </reference>
+        
+        <!-- inject extended page data into the end of body, like product ids on page.
+        	this data must come last because its it contain things that are not yet loaded while rendering header blocks -->
+		<reference name="before_body_end">
+                <block type="shoptimally_core/injectjs" after="-" name="shoptimally_js_extra_buttom" as="shoptimally_js_extra_buttom" template="shoptimally/injectjs_extras_buttom.phtml" />
+        </reference>
+    </default>
+</layout>

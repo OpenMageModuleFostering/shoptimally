@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Shoptimally",
+    "type": "magento-module",
+    "license": "Custom-license",
+    "homepage": "",
+    "description": "Personalize your e-commerce site to match each customer's needs.",
+    "authors": [
+    {
+        "name": "Ronen Ness",
+        "email": "ronen@shoptimally.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

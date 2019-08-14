@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+
+  <modules>
+    <Shoptimally_FullSort>
+      <version>0.1.0</version>
+    </Shoptimally_FullSort>
+  </modules>
+
+  <global>
+  
+    <helpers>
+      <shoptimally_fullsort>
+        <class>Shoptimally_FullSort_Helper</class>
+      </shoptimally_fullsort>
+    </helpers>
+    
+    <blocks>
+      <shoptimally_fullsort>
+        <class>Shoptimally_FullSort_Block</class>
+      </shoptimally_fullsort>
+    </blocks>
+    
+    <models>
+      <shoptimally_fullsort>
+        <class>Shoptimally_FullSort_Model</class>
+      </shoptimally_fullsort>
+    </models>
+    
+  </global>
+
+  <frontend>
+    <layout>
+      <updates>
+        <shoptimally_fullsort>
+          <file>shoptimally/full_sort.xml</file>
+        </shoptimally_fullsort>
+      </updates>
+    </layout>
+	<routers>
+		<shoptimally_fullsort>
+			<use>standard</use>
+			<args>
+				<module>Shoptimally_FullSort</module>
+				<frontName>shoptimally_fullsort</frontName>
+			</args>
+		</shoptimally_fullsort>
+	</routers>   
+  </frontend>
+
+</config> 

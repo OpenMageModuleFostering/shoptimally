@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Shoptimally_FullSort>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>0.1.0</version>
+    </Shoptimally_FullSort>
+  </modules>
+</config>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+
+  <modules>
+    <Shoptimally_FeaturedItems>
+      <version>0.1.0</version>
+    </Shoptimally_FeaturedItems>
+  </modules>
+
+  <global>
+  
+    <helpers>
+      <shoptimally_featureditems>
+        <class>Shoptimally_FeaturedItems_Helper</class>
+      </shoptimally_featureditems>
+    </helpers>
+    
+    <blocks>
+      <shoptimally_featureditems>
+        <class>Shoptimally_FeaturedItems_Block</class>
+      </shoptimally_featureditems>
+    </blocks>
+    
+    <models>
+      <shoptimally_featureditems>
+        <class>Shoptimally_FeaturedItems_Model</class>
+      </shoptimally_featureditems>
+    </models>
+    
+  </global>
+
+
+  <frontend>
+  
+    <layout>
+      <updates>
+        <shoptimally_featureditems>
+          <file>shoptimally_featureditems.xml</file>
+        </shoptimally_featureditems>
+      </updates>
+    </layout>
+    
+    <events>
+        <catalog_block_product_list_collection>
+            <observers>
+                <shoptimally_featureditems>
+                    <type>model</type>
+                    <class>shoptimally_featureditems/observer</class>
+                    <method>onProductsCollectionLoaded</method>
+                </shoptimally_featureditems>
+            </observers>
+        </catalog_block_product_list_collection>
+    </events>
+    
+  </frontend>
+
+
+</config> 

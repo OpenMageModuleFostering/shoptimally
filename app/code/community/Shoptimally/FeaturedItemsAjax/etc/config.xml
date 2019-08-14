@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+
+  <modules>
+    <Shoptimally_FeaturedItemsAjax>
+      <version>0.1.0</version>
+    </Shoptimally_FeaturedItemsAjax>
+  </modules>
+
+  <global>
+  
+    <helpers>
+      <shoptimally_featureditemsajax>
+        <class>Shoptimally_FeaturedItemsAjax_Helper</class>
+      </shoptimally_featureditemsajax>
+    </helpers>
+    
+    <blocks>
+      <shoptimally_featureditemsajax>
+        <class>Shoptimally_FeaturedItemsAjax_Block</class>
+      </shoptimally_featureditemsajax>
+    </blocks>
+    
+    <models>
+      <shoptimally_featureditemsajax>
+        <class>Shoptimally_FeaturedItemsAjax_Model</class>
+      </shoptimally_featureditemsajax>
+    </models>
+    
+  </global>
+
+
+  <frontend>
+	<routers>
+		<shoptimally_featureditemsajax>
+			<use>standard</use>
+			<args>
+				<module>Shoptimally_FeaturedItemsAjax</module>
+				<frontName>shoptimally_featureditemsajax</frontName>
+			</args>
+		</shoptimally_featureditemsajax>
+	</routers>   
+  </frontend>
+
+</config> 

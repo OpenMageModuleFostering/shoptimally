@@ -1,0 +1,6 @@
+<?php if( $this->isEnabled() ): ?>
+<!-- Shoptimally Javascript extra page data -->
+<script type="text/javascript">
+var SHOPTIMALLY_PAGE_INFO = <?php echo $this->getPageInfo(); ?>;
+</script>
+<?php endif; ?>

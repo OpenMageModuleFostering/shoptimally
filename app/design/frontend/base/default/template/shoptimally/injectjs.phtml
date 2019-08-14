@@ -1,0 +1,18 @@
+<?php if( $this->isEnabled() ): ?>
+
+<!-- Shoptimally <?php echo $this->getVersion(); ?> -->
+<script type="text/javascript">
+var SHOPTIMALLY_ALT_DOMAIN = "<?php echo $this->getServerUrl(); ?>/";
+var SHOPTIMALLY_API_KEY = "<?php echo $this->getApiKey(); ?>";
+var SHOPTIMALLY_PLATFORM = "Magento";
+</script>
+<script type="text/javascript" id="shoptimally-src" <?php echo $this->getShoptimallyAsyncMode(); ?> src="<?php echo $this->getShoptimallyJsUrl(); ?>"></script>
+<!-- / Shoptimally Javascript -->
+
+<?php else: ?>
+
+<!-- Note: Shoptimally (<?php echo $this->getVersion(); ?>) is temporarily disabled. -->
+<!-- To enable Shoptimally, please seek the enable/disable option under 'Shoptimally' tab in the Magento admin panel. -->
+<!-- for more info: http://shoptimally.com/ -->
+
+<?php endif; ?>

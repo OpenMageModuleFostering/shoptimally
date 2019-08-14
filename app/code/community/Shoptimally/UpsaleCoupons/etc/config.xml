@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+
+  <modules>
+    <Shoptimally_UpsaleCoupons>
+      <version>0.1.0</version>
+    </Shoptimally_UpsaleCoupons>
+  </modules>
+
+  <global>
+    <helpers>
+      <shoptimally_upsalecoupons>
+        <class>Shoptimally_UpsaleCoupons_Helper</class>
+      </shoptimally_upsalecoupons>
+    </helpers>
+    
+    <blocks>
+      <shoptimally_upsalecoupons>
+        <class>Shoptimally_UpsaleCoupons_Block</class>
+      </shoptimally_upsalecoupons>
+    </blocks>
+    
+    <models>
+      <shoptimally_upsalecoupons>
+        <class>Shoptimally_UpsaleCoupons_Model</class>
+      </shoptimally_upsalecoupons>
+    </models>
+    
+  </global>
+  
+  <frontend>
+    <layout>
+      <updates>
+        <shoptimally_upsalecoupons>
+          <file>shoptimally/upsale_coupons.xml</file>
+        </shoptimally_upsalecoupons>
+      </updates>
+    </layout>
+  </frontend>
+  
+</config> 

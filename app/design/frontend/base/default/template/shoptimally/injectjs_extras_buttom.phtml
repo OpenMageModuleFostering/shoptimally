@@ -1,0 +1,6 @@
+<?php if( $this->isEnabled() ): ?>
+<!-- Shoptimally Javascript extra page data - buttom -->
+<script type="text/javascript">
+SHOPTIMALLY_PAGE_INFO["products"] = <?php echo $this->getProductIds(); ?>;
+</script>
+<?php endif; ?>

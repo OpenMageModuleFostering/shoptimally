@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+
+  <!-- general module config -->
+  <modules>
+    <Shoptimally_Analytics>
+      <version>1.0.0</version>
+    </Shoptimally_Analytics>
+  </modules>
+
+  <!-- basic settings - models, helpers, block dirs etc.. -->
+  <global>
+    <helpers>
+      <shoptimally_analytics>
+        <class>Shoptimally_Analytics_Helper</class>
+      </shoptimally_analytics>
+    </helpers>
+    <models>
+      <shoptimally_analytics>
+        <class>Shoptimally_Analytics_Model</class>
+      </shoptimally_analytics>
+    </models>
+  </global>
+
+  <!-- frontend and events config -->
+  <frontend>
+    <events>
+
+      <!-- event: cart save -->
+      <checkout_cart_save_after>
+        <observers>
+          <shoptimally_analytics_cart_save_before>
+            <class>shoptimally_analytics/observer</class>
+            <method>onCartSave</method>
+          </shoptimally_analytics_cart_save_before>
+        </observers>
+      </checkout_cart_save_after>
+
+      <!-- event: after successful checkout -->
+      <checkout_onepage_controller_success_action>
+        <observers>
+          <shoptimally_analytics_success_checkout>
+            <class>shoptimally_analytics/observer</class>
+            <method>onCheckoutComplete</method>
+          </shoptimally_analytics_success_checkout>
+        </observers>
+      </checkout_onepage_controller_success_action>
+
+    </events>
+  </frontend>
+
+</config> 

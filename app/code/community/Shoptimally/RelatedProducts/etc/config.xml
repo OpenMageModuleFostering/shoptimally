@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config>
+
+  <modules>
+    <Shoptimally_RelatedProducts>
+      <version>0.1.0</version>
+    </Shoptimally_RelatedProducts>
+  </modules>
+
+  <global>
+  
+    <helpers>
+      <shoptimally_relatedproducts>
+        <class>Shoptimally_RelatedProducts_Helper</class>
+      </shoptimally_relatedproducts>
+    </helpers>
+    
+    <blocks>
+      <shoptimally_relatedproducts>
+        <class>Shoptimally_RelatedProducts_Block</class>
+      </shoptimally_relatedproducts>
+    </blocks>
+    
+    <models>
+      <shoptimally_relatedproducts>
+        <class>Shoptimally_RelatedProducts_Model</class>
+      </shoptimally_relatedproducts>
+    </models>
+    
+  </global>
+
+
+  <frontend>
+  
+    <layout>
+      <updates>
+        <shoptimally_relatedproducts>
+          <file>shoptimally_relatedproducts.xml</file>
+        </shoptimally_relatedproducts>
+      </updates>
+    </layout>
+    
+    <events>
+        <catalog_product_collection_load_after>
+            <observers>
+                <shoptimally_relatedproducts>
+                    <type>model</type>
+                    <class>shoptimally_relatedproducts/observer</class>
+                    <method>onProductsCollectionLoaded</method>
+                </shoptimally_relatedproducts>
+            </observers>
+        </catalog_product_collection_load_after>
+		
+		<core_layout_block_create_after>
+            <observers>
+                <shoptimally_relatedproducts>
+                    <type>model</type>
+                    <class>shoptimally_relatedproducts/observer</class>
+                    <method>onBlockLoaded</method>
+                </shoptimally_relatedproducts>
+            </observers>
+        </core_layout_block_create_after>
+			
+    </events>
+    
+  </frontend>
+
+
+</config> 

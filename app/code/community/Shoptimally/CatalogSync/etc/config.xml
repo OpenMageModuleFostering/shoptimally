@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<config>
+
+  <!-- general module config -->
+  <modules>
+    <Shoptimally_CatalogSync>
+      <version>1.0.0</version>
+    </Shoptimally_CatalogSync>
+  </modules>
+
+  <!-- basic settings - models, helpers, block dirs etc.. -->
+  <global>
+  
+    <helpers>
+      <shoptimally_catalogsync>
+        <class>Shoptimally_CatalogSync_Helper</class>
+      </shoptimally_catalogsync>
+    </helpers>
+    
+    <models>
+      <shoptimally_catalogsync>
+        <class>Shoptimally_CatalogSync_Model</class>
+      </shoptimally_catalogsync>
+    </models>
+    
+    <blocks>
+      <shoptimally_catalogsync>
+        <class>Shoptimally_CatalogSync_Block</class>
+      </shoptimally_catalogsync>
+    </blocks>
+    
+  </global>
+  
+  <!-- cronjob to update products to the server -->
+  <crontab>
+    <jobs>
+      <!--  time-based catalog sync -->
+      <shoptimally_catalogsync_time_based>
+        <schedule><cron_expr>0,15,30,45 * * * *</cron_expr></schedule>
+        <run><model>shoptimally_catalogsync/cron::updateCatalog</model></run>
+      </shoptimally_catalogsync_time_based>
+      
+      <!-- interesting list catalog sync -->
+      <shoptimally_catalogsync_interesting_list>
+        <schedule><cron_expr>0,10,20,30,40,50 * * * *</cron_expr></schedule>
+        <run><model>shoptimally_catalogsync/cron::updateCatalogInterestingList</model></run>
+      </shoptimally_catalogsync_interesting_list>
+    
+      <!-- update products htmls -->
+      <shoptimally_catalogsync_update_htmls>
+        <schedule><cron_expr>9,19,29,39,49,59 * * * *</cron_expr></schedule>
+        <run><model>shoptimally_catalogsync/cron::updateProductsHtmls</model></run>
+      </shoptimally_catalogsync_update_htmls>
+    </jobs>
+  </crontab>
+
+  <!-- frontend and events config -->
+  <adminhtml>
+    <events>
+    
+      <!-- event: product save, to update shoptimally about new item data -->
+        <catalog_product_save_after>
+            <observers>
+                <shoptimally_catalogsync>
+                    <type>model</type>
+                    <class>shoptimally_catalogsync/observer</class>
+                    <method>onProductUpdate</method>
+                </shoptimally_catalogsync>
+            </observers>
+        </catalog_product_save_after>
+
+    </events>
+  </adminhtml>
+
+	<!--  event: products list loaded, to add them to interesting products list -->
+	<frontend>
+		<events>
+	        <catalog_block_product_list_collection>
+	            <observers>
+	                <shoptimally_catalogsync>
+	                    <type>model</type>
+	                    <class>shoptimally_catalogsync/observer</class>
+	                    <method>onProductsListLoaded</method>
+	                </shoptimally_catalogsync>
+	            </observers>
+	        </catalog_block_product_list_collection>    
+		</events>
+	</frontend>
+
+</config> 

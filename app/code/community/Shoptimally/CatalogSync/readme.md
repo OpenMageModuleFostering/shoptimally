@@ -1,0 +1,2 @@
+This module responsible to sync the site catalog and products data with Shoptimally.
+It listen to events like product save and attribute update, and in addition have a cronjob to slowly update catalog over time.
